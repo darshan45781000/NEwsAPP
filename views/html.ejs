@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+     <link rel="stylesheet" href="css/home.css">
+    <script src="script.js" defer></script>
+    <title>Shopping App </title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand-title"><h1>Shopping CArt</h1>
+      </div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="cart.html">Cart</a></li>
+          <li><a href="#">Orders</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+   
+    <div class="container">
+    
+        <div class="row">
+          <% user.forEach(function(user){%>
+          <div class="card">
+            <div class="card-header">
+              <img src="<%=user.ImageUrl %>" id="img1"  style="width: 100%; height: 100%;">
+            </div>
+            <div class="card-body">
+                <h4><%=user.ProductName %></h4>
+                <h4><%=user.ProductPrice %></h4>
+              <div style="margin-top: 5px;">
+                <span><button onclick="Increment(document.getElementById('text1'))"  class="btn">+</button></span>
+                <span class="textbox"><input type="text" id="text1" class="textstyle" value="0" style="width: 20px; height: 20px;" readonly></span>
+                <span><button onclick="Decrement(document.getElementById('text1'))"   class="btn">-</button></span>
+            </div>
+              
+            <span> <a href="/about/<%=user.ProductId %>"><button class="btnn b addtocart" >BUY NOW</button></a></span>
+             <span> <button class="btnn b buynow">ADD TO CART</button></span>
+            </div>
+          </div>
+
+        
+          <%}); %>
+        </div>
+    </div>
+</body>
+</html>
