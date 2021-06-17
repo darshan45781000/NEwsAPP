@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <link rel="stylesheet" href="css/product.css">
+    <link rel="stylesheet" href="css/home.css">
+    <script src="js/input.js"></script>
+    <title>Buy Iteams</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="brand-title">BuyIteams</div>
+      <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </a>
+      <div class="navbar-links">
+        <ul>
+          <li><a href="/cart"><img src="img/cart.jpg" width="30px" height="30px"></a></li>
+          <li><a href="#">Orders</a></li>
+          <li><a href="#">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+
+<div class="product-main">
+  <% user.forEach(function(user){%>
+  
+    <div class="product_container">
+      <div class="img-box">
+     <img src="<%=user.ImageUrl %>">
+      </div>
+<div class="text-box1">
+<h1><%= user.ProductName %></h1>
+<p>
+  <%= user.ProductDescription %>
+  <input type="text" hidden id="id1" value="<%=user.ImageUrl %>">
+  <input type="text" hidden id="id2" value="<%=user.ProductPrice %>">
+  <input type="text" hidden id="id3" value="<%= user.ProductName %>">
+  <input type="text" hidden id="id4" value="<%=user.ProductId %>">
+</p>
+Quantity:
+<select class="Q1" name="Quantity"  id="Quantity">
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+</select>
+
+       <h2> <%= user.ProductPrice %> per Kg</h2>
+      
+       
+      
+      <button onclick="Send(document.getElementById('id1'),document.getElementById('id2'),document.getElementById('Quantity'),document.getElementById('id3'),document.getElementById('id4'))" >Add to Cart</button>
+<button>buy now</button>
+</div>
+    </div>
+    <%}); %>
+  </div>
+
+
+  
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
